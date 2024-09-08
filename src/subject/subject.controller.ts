@@ -1,9 +1,11 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { SUBJECTS } from './bdd';
-import { InterfaceSubject } from './subject';
+import { InterfacePostSubject, InterfaceSubject } from './subject';
+import { SubjectService } from './subject.service';
 
 @Controller('subject')
 export class SubjectController {
+  constructor(private readonly subjectService: SubjectService) {}
 
   @Get()
   findAll(): InterfaceSubject[] {
@@ -12,8 +14,8 @@ export class SubjectController {
 
   @Post()
   addSubject(
-    @Body() subject: InterfaceSubject
+    @Body() subject: InterfacePostSubject
   ): InterfaceSubject[] {
-    return [...SUBJECTS, subject];
+    return this.subjectService.createNewSubject(subject);
   }
 }
