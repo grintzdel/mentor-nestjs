@@ -4,6 +4,12 @@ import { InterfacePostSubject, InterfaceSubject } from './subject';
 
 @Injectable()
 export class SubjectService {
+
+    findOneById(id: number): InterfaceSubject {
+        const subject = SUBJECTS.find((s) => s.id === id)
+        return subject;
+    }
+
     createNewSubject(
      { name }: InterfacePostSubject
   ): InterfaceSubject[] {
