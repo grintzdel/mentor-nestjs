@@ -4,6 +4,6 @@ export type LevelInterface = {
 };
 
 export type LevelSubjectInterface = {
-    level: LevelInterface;
-    subject: InterfaceSubject
+    level: LevelInterface,
+    subject: InterfaceSubject,
 }
