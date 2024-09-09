@@ -2,13 +2,16 @@ export const SUBJECTS = [
     {
         id: 1,
         name: "français",
+        levelId: 1
     },
     {
         id: 2,
-        name: "anglais"
+        name: "anglais",
+        levelId: 1
     },
     {
         id: 3,
-        name: "mathématiques"
+        name: "mathématiques",
+        levelId: 3
     }
 ]
